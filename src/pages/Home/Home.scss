@@ -1,0 +1,283 @@
+@import "../../colors";
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light:regular);
+.hero {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+  min-height: 100vh;
+  flex-direction: column;
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 600;
+    color: $white;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    button {
+      background-color: $accent;
+      color: $dark;
+      border: none;
+      border-radius: 2rem;
+      font-weight: 500;
+      font-size: 30px;
+      width: 150px;
+      height: 50px;
+      cursor: pointer;
+    }
+    .pointer {
+      position: absolute;
+      top: -40px;
+      right: -115px;
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 0.8rem;
+        width: 100px;
+        text-align: center;
+        margin: 3px;
+        font-weight: bold;
+        transform: rotate(25deg);
+        color: $white;
+        font-family: "Shadows Into Light", cursive;
+      }
+      img {
+        width: 30px;
+        transform: rotate(69deg);
+      }
+    }
+  }
+}
+.is_sht {
+  background-color: $accent;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 600;
+    color: $dark;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    color: #000;
+    .right {
+      display: flex;
+      flex-direction: column;
+      font-family: "Shadow Into Light", cursive;
+      width: 100px;
+      text-align: center;
+      position: relative;
+      img {
+        transform: scaleX(-1) rotate(-95deg);
+      }
+      small {
+        transform: rotate(10deg);
+        font-weight: 600;
+        position: absolute;
+        top: -35px;
+        font-size: 0.7rem;
+      }
+    }
+    img {
+      width: 30px;
+    }
+    .main {
+      background-color: $white;
+      width: 20rem;
+      height: 7rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2.5rem 1rem;
+      .button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+          background-color: $dark;
+          color: $white;
+          border: none;
+          padding: 0.5rem 0.9rem;
+          font-weight: 500;
+          font-size: 1.5rem;
+          cursor: pointer;
+          width: 12rem;
+        }
+        .btns {
+          animation: flow2 1s infinite;
+          .btn {
+            background-color: #181818;
+            color: #fff;
+            position: absolute;
+            top: -30rem;
+            width: 10rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.8rem 0;
+            svg {
+              width: 2rem;
+              margin-right: 0.5rem;
+            }
+
+            &:nth-child(1) {
+              //faceboook
+              transform: translate(-18rem, -2rem) rotate(-10deg);
+              box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+              z-index: 2;
+              transition: ease-in-out 0.5s;
+              &:hover {
+                transform: translate(-18rem, -2rem) rotate(0);
+                transition: ease-in-out 0.5s;
+              }
+              &.anim {
+                animation: flow_1 1s;
+                animation-iteration-count: 1;
+              }
+            }
+            &:nth-child(2) {
+              //twitter
+              transform: translate(0rem, 0.5rem) rotate(-5deg);
+              box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+              z-index: 1;
+              transition: ease-in-out 0.5s;
+              &:hover {
+                transform: translate(0rem, 0.5rem) rotate(0);
+                transition: ease-in-out 0.5s;
+              }
+
+              &.anim {
+                animation: flow_3 1s;
+                animation-iteration-count: 1;
+                animation-delay: 100ms;
+              }
+            }
+            &:nth-child(3) {
+              //youtube
+              transform: translate(9rem, -1rem) rotate(5deg);
+              box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+              z-index: 0;
+              transition: ease-in-out 0.5s;
+              &:hover {
+                transform: translate(9rem, -1rem) rotate(0);
+                transition: ease-in-out 0.5s;
+              }
+              &.anim {
+                animation: flow_4 1s;
+                animation-iteration-count: 1;
+                animation-delay: 200ms;
+              }
+            }
+            &:nth-child(4) {
+              //tiktok
+              transform: translate(-9rem, -1rem) rotate(5deg);
+              z-index: 1;
+              box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+              transition: ease-in-out 0.5s;
+              &:hover {
+                transform: translate(-9rem, -1rem) rotate(0);
+                transition: ease-in-out 0.5s;
+              }
+              &.anim {
+                animation: flow_2 1s;
+                animation-iteration-count: 1;
+                animation-delay: 150ms;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes flow_1 {
+  0% {
+    top: -45rem;
+    opacity: 1;
+    transform: translate(-18rem, -2rem) rotate(-10deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+    transform: translate(-10rem, -2rem) rotate(0);
+  }
+}
+
+@keyframes flow_2 {
+  0% {
+    top: -45rem;
+    opacity: 1;
+    transform: translate(-9rem, -1rem) rotate(5deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+    transform: translate(-10rem, -2rem) rotate(0);
+  }
+}
+
+@keyframes flow_3 {
+  0% {
+    top: -45rem;
+    opacity: 1;
+    transform: translate(0rem, 0.5rem) rotate(-5deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+    transform: translate(-10rem, -2rem) rotate(0);
+  }
+}
+
+@keyframes flow_4 {
+  0% {
+    top: -45rem;
+    opacity: 1;
+    transform: translate(9rem, -1rem) rotate(5deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+    transform: translate(-10rem, -2rem) rotate(0);
+  }
+}
+.features {
+  background-color: #fff;
+  min-height: 100vh;
+  img {
+    width: 30px;
+  }
+}

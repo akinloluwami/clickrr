@@ -21,6 +21,8 @@ mongoose
     console.log("Error. Could not connect to Mongo", err);
   });
 
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 6969;
+
+app.listen(port, () => {
   console.log(`SERVER IS LIVE ON http://localhost:${process.env.PORT}!`);
 });

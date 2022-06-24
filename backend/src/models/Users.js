@@ -72,6 +72,10 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  otpExpiry: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

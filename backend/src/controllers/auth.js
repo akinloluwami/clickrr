@@ -16,6 +16,7 @@ module.exports = {
       createdAt: Date.now(),
       updatedAt: Date.now(),
       otp: crypto.randomBytes(3).toString("hex"),
+      otpExpiry: Date.now() + 1000 * 60 * 15,
     });
 
     const emailExists = await User.findOne({ email: email });

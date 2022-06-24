@@ -21,6 +21,10 @@ mongoose
     console.log("Error. Could not connect to Mongo", err);
   });
 
+const authRouter = require("./src/routes/auth");
+
+app.use("/api/auth", authRouter);
+
 const port = process.env.PORT || 6969;
 
 app.listen(port, () => {

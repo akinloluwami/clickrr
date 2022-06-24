@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/Users");
+const crypto = require("crypto");
 
 module.exports = {
   // POST /api/auth/signup

@@ -67,8 +67,11 @@ module.exports = {
   // POST /api/auth/verify OTP
   verifyOTP: async (req, res) => {
     const user = await User.findOne({ otp: req.body.otp });
-    const otpExpired = user.otpExpiry < Date.now();
-    if (otpExpired) {
+    if (!user) {
+      return res.status(400).json({
+        message: "OTP is invalid",
+      });
+    } else if (user.otpExpiry < Date.now()) {
       return res.status(400).json({
         message: "OTP expired",
       });
@@ -78,7 +81,7 @@ module.exports = {
       user.otpExpiry = "";
       user.save();
       return res.status(200).json({
-        message: "OTP verified",
+        message: "Email verified successfully",
         user,
       });
     } else {

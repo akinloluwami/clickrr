@@ -90,4 +90,25 @@ module.exports = {
       });
     }
   },
+  //POST /api/auth/login
+  login: async (req, res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username: username });
+    if (!user) {
+      return res.status(400).json({
+        message: "Username or password is incorrect",
+      });
+    } else if (!bcrypt.compareSync(password, user.password)) {
+      return res.status(400).json({
+        message: "Username or password is incorrect",
+      });
+    } else {
+      user.lastLogin = Date.now();
+      user.save();
+      return res.status(200).json({
+        message: "Login successful",
+        user,
+      });
+    }
+  },
 };

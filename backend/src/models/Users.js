@@ -40,6 +40,14 @@ const userSchema = new Schema({
   views: {
     type: Number,
     default: 0,
+    locations: {
+      type: Array,
+      default: [],
+    },
+    devices: {
+      type: Array,
+      default: [],
+    },
   },
   theme: {
     type: String,

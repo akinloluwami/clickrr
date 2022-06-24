@@ -64,4 +64,27 @@ module.exports = {
       });
     }
   },
+  // POST /api/auth/verify OTP
+  verifyOTP: async (req, res) => {
+    const user = await User.findOne({ otp: req.body.otp });
+    const otpExpired = user.otpExpiry < Date.now();
+    if (otpExpired) {
+      return res.status(400).json({
+        message: "OTP expired",
+      });
+    } else if (user) {
+      user.isEmailVerified = true;
+      user.otp = "";
+      user.otpExpiry = "";
+      user.save();
+      return res.status(200).json({
+        message: "OTP verified",
+        user,
+      });
+    } else {
+      return res.status(400).json({
+        message: "Invalid OTP",
+      });
+    }
+  },
 };

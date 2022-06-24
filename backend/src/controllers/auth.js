@@ -57,7 +57,7 @@ module.exports = {
         message: "Password must be at least 8 characters long",
       });
     } else {
-      //   user.save();
+      user.save();
       return res.status(201).json({
         message: "User created successfully",
         user,

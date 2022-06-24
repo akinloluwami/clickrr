@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/Users");
 const crypto = require("crypto");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
   // POST /api/auth/signup
@@ -107,7 +108,7 @@ module.exports = {
       user.save();
       return res.status(200).json({
         message: "Login successful",
-        user,
+        token: jwt.sign({ id: user._id }, process.env.JWT_SECRET),
       });
     }
   },

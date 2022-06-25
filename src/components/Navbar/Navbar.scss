@@ -7,7 +7,7 @@
   padding: clamp(1rem, 5vw, 2rem);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 99999999999;
   background-color: rgba($dark, 1);
   backdrop-filter: blur(50px);
   .logo {

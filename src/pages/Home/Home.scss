@@ -1,13 +1,14 @@
 @import "../../colors";
 @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light:regular);
 .hero {
-  margin-top: 2rem;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   height: fit-content;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #0a0a0a;
   h1 {
     font-size: clamp(2.5rem, 5vw, 5rem);
     font-weight: 600;

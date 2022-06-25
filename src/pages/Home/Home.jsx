@@ -139,7 +139,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="features"></div>
+      {/* <div className="features"></div> */}
     </div>
   );
 }

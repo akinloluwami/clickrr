@@ -8,8 +8,10 @@ function Navbar() {
         <span>C</span> clickrr
       </div>
       <div className="ctas">
-        <p>Login</p>
-        <button>Sign Up</button>
+        <Link to="/login">Login</Link>
+        <Link to="/signup">
+          <button>Sign Up</button>
+        </Link>
       </div>
     </div>
   );
